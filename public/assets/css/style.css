@@ -109,4 +109,15 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.countries-container {
+  padding: 40px 0px;
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=style.css.map */
