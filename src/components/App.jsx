@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import Countries from './Countries';
+import Card from './Card';
 import Footer from './Footer';
 import {Line,Bar} from 'react-chartjs-2';
 import { fetchCountry, fecthDailyGlobalStats, fecthCountriesDaily } from '../api/api';
@@ -114,24 +115,9 @@ const App = () =>{
         <div>
             <Header/>
             <div className="grid">
-                <div className="element box">
-                    <h5>Infected</h5>
-                    <h2 className="number-infected">{info.infected}</h2>
-                    <p className=" date date-infected">{today.toDateString()}</p>
-                    <p className="info">Number of active cases of COVID-19</p>
-                </div>
-                <div className="element box">
-                    <h5>Recovered</h5>
-                    <h2 className="number-recovered">{info.recovered}</h2>
-                    <p className="date date-recovered">{today.toDateString()}</p>
-                    <p className="info">Number of recoveries from COVID-19</p>
-                </div>
-                <div className="element box">
-                    <h5>Deaths</h5>
-                    <h2 className="number-deaths">{info.deaths}</h2>
-                    <p className="date date-deaths">{today.toDateString()}</p>
-                    <p className="info">Number of deaths caused by COVID-19</p>
-                </div>
+                <Card title="Infected" infected={info.infected} date={today.toDateString()} description="Number of active cases from COVID-19"/>
+                <Card title="Recovered" infected={info.recovered} description="Number of recoveries from COVID-19"/>
+                <Card title="Deaths" infected={info.deaths} description="Number of deaths caused by COVID-19"/>
             </div>
             <div className="countries-container">
                 <Countries countryChangeHandle={countryChangeHandle}/>
